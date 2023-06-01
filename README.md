@@ -8,13 +8,13 @@ This project, conducted as a part of our "Objets connectés" (Connected Objects)
 
 The first half of the project involved creating a generic library that implements a state machine. The library includes:
 
-  *FiniteStateMachine: This class handles the management of states and transitions that developers can incorporate into it, in addition to managing the main loop or tick of the state.
+  * FiniteStateMachine: This class handles the management of states and transitions that developers can incorporate into it, in addition to managing the main loop or tick of the state.
   
-  *ActionState: Each state inheriting from this class can accept callable objects for its entering, in-state, and exiting actions, which will be executed by the FiniteStateMachine.
+  * ActionState: Each state inheriting from this class can accept callable objects for its entering, in-state, and exiting actions, which will be executed by the FiniteStateMachine.
   
-  *Transition Classes: These facilitate state-to-state changes and can handle different conditions for transitioning.
+  * Transition Classes: These facilitate state-to-state changes and can handle different conditions for transitioning.
   
-  *Blinker: A generic class to manage any required blink mechanism. This class inherits from FiniteStateMachine.
+  * Blinker: A generic class to manage any required blink mechanism. This class inherits from FiniteStateMachine.
   
 The goal was to design a library flexible enough to be utilized in any program requiring a state machine.
 
@@ -22,15 +22,15 @@ The goal was to design a library flexible enough to be utilized in any program r
 
 The second half of the project centered around the integration of the state machine library into the operation of GoPiGo3 robots. It involved:
 
-  *Robot Initialization/Startup: A sequence of states and transitions to initialize and start the robot.
+  * Robot Initialization/Startup: A sequence of states and transitions to initialize and start the robot.
 
-  *Home State: This state listens for remote control input to trigger different tasks.
+  * Home State: This state listens for remote control input to trigger different tasks.
 
-  *Robot Tasks (task1, task2): Two tasks that the robot can perform using the state machine library. Task 1 takes input from the remote control to move the robot through its motors, and blink its headlights           accordingly. Task 2 simply moves the robot around and takes the input from the built-in depth sensor to stop it when it is close to objects in front of it. 
+  * Robot Tasks (task1, task2): Two tasks that the robot can perform using the state machine library. Task 1 takes input from the remote control to move the robot through its motors, and blink its headlights           accordingly. Task 2 simply moves the robot around and takes the input from the built-in depth sensor to stop it when it is close to objects in front of it. 
 
-  *Robot Class: A class to manage the robot's components.
+  * Robot Class: A class to manage the robot's components.
 
-  *StateMachine Class (C64Proj): This class manages the entire program.
+  * StateMachine Class (C64Proj): This class manages the entire program.
 
 ## Getting Started
 
