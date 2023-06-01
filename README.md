@@ -1,5 +1,43 @@
 # StateMachine Robot Project
 
-## Description
+## Overview
 
-This python project was done within the context of our "Objets connectés" (connected objects) class. The project was separated into two parts. First, we had to create a generic library implementing a state machine. This library provides classes for a FiniteStateMachine, which handles all the states and transitions a developper could add to it as well as the main loop or tick of the state. It also includes every class needed to make it work, including different states used for purposes such as monitoring conditions and/or performing actions. Each state inheriting from ActionState can be passed a callable object for its entering, in-state, and exiting actions which will be executed by the FiniteStateMachine. The library also includes classes for different types of transitions used to change from state to state, as well as a generic Blinker class used to handle any sort of blink mechanism required. This class inherits from FiniteStateMachine. The goal of this was to create a library that can be used for any sort of program requiring a state machine. In the second part of the project, we were handed GoPiGo3 robots, and had to implement the library we had created to perform tasks on the robot. This included a robot initialisation/startup series of states, a home state that listens for remote control input to enter different tasks, two tasks that the robot can perform, a robot class to handle its components, and a state machine class that handles the entire program.
+This project, conducted as a part of our "Objets connectés" (Connected Objects) course, is a Python-based application designed around the concept of state machines. It's composed of two main parts: the development of a versatile state machine library and its application in controlling a GoPiGo3 robot.
+
+## Part 1: State Machine Library
+
+The first half of the project involved creating a generic library that implements a state machine. The library includes:
+
+  -FiniteStateMachine: This class handles the management of states and transitions that developers can incorporate into it, in addition to managing the main loop or tick of the state.
+  
+  -ActionState: Each state inheriting from this class can accept callable objects for its entering, in-state, and exiting actions, which will be executed by the FiniteStateMachine.
+  
+  -Transition Classes: These facilitate state-to-state changes and can handle different conditions for transitioning.
+  
+  -Blinker: A generic class to manage any required blink mechanism. This class inherits from FiniteStateMachine.
+  
+The goal was to design a library flexible enough to be utilized in any program requiring a state machine.
+
+## Part 2: GoPiGo3 Robot Integration
+
+The second half of the project centered around the integration of the state machine library into the operation of GoPiGo3 robots. It involved:
+
+  -Robot Initialization/Startup: A sequence of states and transitions to initialize and start the robot.
+
+  -Home State: This state listens for remote control input to trigger different tasks.
+
+  -Robot Tasks (task1, task2): Two tasks that the robot can perform using the state machine library. Task 1 takes input from the remote control to move the robot through its motors, and blink its headlights           accordingly. Task 2 simply moves the robot around and takes the input from the built-in depth sensor to stop it when it is close to objects in front of it. 
+
+  -Robot Class: A class to manage the robot's components.
+
+  -StateMachine Class (C64Proj): This class manages the entire program.
+
+## Getting Started
+
+Follow these steps to run the program on the GoPiGo3 robot:
+
+1. Connect to the Robot: Connect your device to the robot using Wi-Fi.
+2. Access the Robot's User Interface: Open a web browser and navigate to 10.10.10.10 to access the robot's user interface.
+3. Open Jupyter Python: On the robot's user interface, click on the Jupyter Python option.
+4. Upload Project Files: Download the files from the code folder in this repository and copy them into the robot's directory.
+5. Run the Program: Finally, execute the main.py file to start the program.
